@@ -2,12 +2,13 @@ package steps;
 
 import java.time.Duration;
 
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -40,7 +41,8 @@ public void user_enters_valid_username_and_password() {
 @Then("user should see the dashboard page")
 public void user_should_see_the_dashboard_page() {
 	boolean dashBOradVisble = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[text()='Dashboard']"))).isDisplayed();
-	Assert.assertTrue("Dashboard not displayed", dashBOradVisble);
+	Assert.assertTrue(dashBOradVisble);
+
 	
 	driver.quit();
 	
