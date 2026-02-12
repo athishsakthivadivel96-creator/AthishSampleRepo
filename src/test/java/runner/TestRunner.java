@@ -9,12 +9,17 @@ import org.testng.annotations.DataProvider;
         glue = "steps",
         plugin = {
                 "pretty",
-                "html:target/cucumber-reports/index.html",
-                "json:target/cucumber-reports/cucumber.json"
+                "html:target/report.html",
+                "json:target/cucumber.json"
         },
         monochrome = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
+
+    static {
+        System.out.println("===== RUNNER IS EXECUTING =====");
+        System.out.println("Working Directory: " + System.getProperty("user.dir"));
+    }
 
     @Override
     @DataProvider(parallel = false)
