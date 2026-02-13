@@ -10,16 +10,12 @@ import org.testng.annotations.DataProvider;
         plugin = {
                 "pretty",
                 "html:target/report.html",
-                "json:target/cucumber.json"
+                "json:target/cucumber.json",
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
         monochrome = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
-
-    static {
-        System.out.println("===== RUNNER IS EXECUTING =====");
-        System.out.println("Working Directory: " + System.getProperty("user.dir"));
-    }
 
     @Override
     @DataProvider(parallel = false)
