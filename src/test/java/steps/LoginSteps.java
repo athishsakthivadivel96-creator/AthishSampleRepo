@@ -4,7 +4,7 @@ import io.cucumber.java.en.*;
 import org.testng.Assert;
 import pages.LoginPage;
 
-public class LoginSteps {
+
 
     LoginPage loginPage;
 
@@ -37,8 +37,6 @@ public class LoginSteps {
     @When("user enters invalid username and password")
     public void user_enters_invalid_username_and_password() {
 
-        loginPage.login("athishy", "wrongpassword");
-    }
 
     @Then("error message should be displayed")
     public void error_message_should_be_displayed() {
